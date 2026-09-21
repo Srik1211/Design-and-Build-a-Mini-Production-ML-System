@@ -1,0 +1,278 @@
+{
+  "checked_at": "2026-08-07T09:03:35.004754+00:00",
+  "recent_batch": "/Users/sriganes.tallapaneni/Documents/projects/me/bits3_y1/ML/data/incoming/day_05_2026-08-05.csv",
+  "schema": {
+    "ok": true,
+    "missing_columns": []
+  },
+  "data_quality": {
+    "ok": true,
+    "issues": [],
+    "null_rates": {
+      "customerID": 0.0,
+      "gender": 0.0,
+      "SeniorCitizen": 0.0,
+      "Partner": 0.0,
+      "Dependents": 0.0,
+      "tenure": 0.0,
+      "PhoneService": 0.0,
+      "MultipleLines": 0.0,
+      "InternetService": 0.0,
+      "OnlineSecurity": 0.0,
+      "OnlineBackup": 0.0,
+      "DeviceProtection": 0.0,
+      "TechSupport": 0.0,
+      "StreamingTV": 0.0,
+      "StreamingMovies": 0.0,
+      "Contract": 0.0,
+      "PaperlessBilling": 0.0,
+      "PaymentMethod": 0.0,
+      "MonthlyCharges": 0.0,
+      "TotalCharges": 0.0,
+      "Churn": 0.0
+    },
+    "n_rows": 281
+  },
+  "drift": {
+    "numeric_drift": {
+      "tenure": {
+        "reference_mean": 32.3177,
+        "recent_mean": 36.0391,
+        "pct_change": 0.1152,
+        "z_score": 2.54,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "MonthlyCharges": {
+        "reference_mean": 64.4222,
+        "recent_mean": 66.2623,
+        "pct_change": 0.0286,
+        "z_score": 1.03,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "TotalCharges": {
+        "reference_mean": 2263.4007,
+        "recent_mean": 2616.5909,
+        "pct_change": 0.156,
+        "z_score": 2.62,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "SeniorCitizen": {
+        "reference_mean": 0.1698,
+        "recent_mean": 0.153,
+        "pct_change": 0.0985,
+        "z_score": -0.75,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "num_services": {
+        "reference_mean": 3.7017,
+        "recent_mean": 3.8754,
+        "pct_change": 0.0469,
+        "z_score": 1.39,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "avg_monthly_spend_ratio": {
+        "reference_mean": 0.8978,
+        "recent_mean": 0.9081,
+        "pct_change": 0.0115,
+        "z_score": 1.11,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "contract_risk_score": {
+        "reference_mean": 3.1261,
+        "recent_mean": 2.8826,
+        "pct_change": 0.0779,
+        "z_score": -2.02,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "is_high_value_customer": {
+        "reference_mean": 0.2507,
+        "recent_mean": 0.2847,
+        "pct_change": 0.1358,
+        "z_score": 1.32,
+        "n_recent": 281,
+        "flagged": false
+      },
+      "has_internet_no_security": {
+        "reference_mean": 0.3629,
+        "recent_mean": 0.3096,
+        "pct_change": 0.1468,
+        "z_score": -1.86,
+        "n_recent": 281,
+        "flagged": false
+      }
+    },
+    "categorical_drift": {
+      "gender": {
+        "categories": {
+          "Female": {
+            "reference": 0.4905,
+            "recent": 0.4698,
+            "abs_diff": 0.0207
+          },
+          "Male": {
+            "reference": 0.5095,
+            "recent": 0.5302,
+            "abs_diff": 0.0207
+          }
+        },
+        "max_abs_diff": 0.0207,
+        "flagged": false
+      },
+      "Partner": {
+        "categories": {
+          "No": {
+            "reference": 0.5174,
+            "recent": 0.4626,
+            "abs_diff": 0.0548
+          },
+          "Yes": {
+            "reference": 0.4826,
+            "recent": 0.5374,
+            "abs_diff": 0.0548
+          }
+        },
+        "max_abs_diff": 0.0548,
+        "flagged": false
+      },
+      "Dependents": {
+        "categories": {
+          "No": {
+            "reference": 0.703,
+            "recent": 0.694,
+            "abs_diff": 0.009
+          },
+          "Yes": {
+            "reference": 0.297,
+            "recent": 0.306,
+            "abs_diff": 0.009
+          }
+        },
+        "max_abs_diff": 0.009,
+        "flagged": false
+      },
+      "InternetService": {
+        "categories": {
+          "Fiber optic": {
+            "reference": 0.4378,
+            "recent": 0.4484,
+            "abs_diff": 0.0106
+          },
+          "No": {
+            "reference": 0.2169,
+            "recent": 0.2349,
+            "abs_diff": 0.018
+          },
+          "DSL": {
+            "reference": 0.3452,
+            "recent": 0.3167,
+            "abs_diff": 0.0285
+          }
+        },
+        "max_abs_diff": 0.0285,
+        "flagged": false
+      },
+      "Contract": {
+        "categories": {
+          "Month-to-month": {
+            "reference": 0.5527,
+            "recent": 0.4911,
+            "abs_diff": 0.0616
+          },
+          "Two year": {
+            "reference": 0.2383,
+            "recent": 0.3274,
+            "abs_diff": 0.0891
+          },
+          "One year": {
+            "reference": 0.209,
+            "recent": 0.1815,
+            "abs_diff": 0.0275
+          }
+        },
+        "max_abs_diff": 0.0891,
+        "flagged": false
+      },
+      "PaymentMethod": {
+        "categories": {
+          "Credit card (automatic)": {
+            "reference": 0.2209,
+            "recent": 0.2206,
+            "abs_diff": 0.0003
+          },
+          "Bank transfer (automatic)": {
+            "reference": 0.2246,
+            "recent": 0.1957,
+            "abs_diff": 0.0289
+          },
+          "Electronic check": {
+            "reference": 0.3318,
+            "recent": 0.3345,
+            "abs_diff": 0.0027
+          },
+          "Mailed check": {
+            "reference": 0.2227,
+            "recent": 0.2491,
+            "abs_diff": 0.0264
+          }
+        },
+        "max_abs_diff": 0.0289,
+        "flagged": false
+      },
+      "PaperlessBilling": {
+        "categories": {
+          "No": {
+            "reference": 0.4045,
+            "recent": 0.4413,
+            "abs_diff": 0.0368
+          },
+          "Yes": {
+            "reference": 0.5955,
+            "recent": 0.5587,
+            "abs_diff": 0.0368
+          }
+        },
+        "max_abs_diff": 0.0368,
+        "flagged": false
+      },
+      "tenure_bucket": {
+        "categories": {
+          "new": {
+            "reference": 0.3108,
+            "recent": 0.2527,
+            "abs_diff": 0.0581
+          },
+          "established": {
+            "reference": 0.2643,
+            "recent": 0.2562,
+            "abs_diff": 0.0081
+          },
+          "loyal": {
+            "reference": 0.4248,
+            "recent": 0.4911,
+            "abs_diff": 0.0663
+          }
+        },
+        "max_abs_diff": 0.0663,
+        "flagged": false
+      }
+    },
+    "drift_score": 0
+  },
+  "retrain_signals": {
+    "new_days_of_data": 1,
+    "drift_score": 0,
+    "baseline_auc": 0.8224,
+    "recent_labeled_auc": null
+  },
+  "retrain_decision": {
+    "retrain": false,
+    "reasons": []
+  }
+}

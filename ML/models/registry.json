@@ -1,0 +1,48 @@
+{
+  "production": "candidate",
+  "updated_at": "2026-08-07T08:19:18.790949+00:00",
+  "models": {
+    "baseline": {
+      "path": "models/baseline/model.joblib",
+      "version": "baseline-20260807T081918",
+      "metrics_val": {
+        "accuracy": 0.7778,
+        "roc_auc": 0.8387,
+        "precision": 0.6037,
+        "recall": 0.5019,
+        "f1": 0.5481,
+        "n_samples": 972,
+        "positive_rate": 0.2685
+      }
+    },
+    "candidate": {
+      "path": "models/candidate/model.joblib",
+      "version": "candidate-20260807T081918",
+      "metrics_val": {
+        "accuracy": 0.7829,
+        "roc_auc": 0.8355,
+        "precision": 0.6136,
+        "recall": 0.5172,
+        "f1": 0.5613,
+        "n_samples": 972,
+        "positive_rate": 0.2685
+      }
+    }
+  },
+  "promotion_decision": {
+    "promoted": "candidate",
+    "reasons": [
+      "candidate AUC 0.8355 >= floor 0.75",
+      "baseline-candidate AUC gap 0.0032 <= allowed regression 0.01"
+    ]
+  },
+  "production_test_metrics": {
+    "accuracy": 0.786,
+    "roc_auc": 0.8224,
+    "precision": 0.6256,
+    "recall": 0.5057,
+    "f1": 0.5593,
+    "n_samples": 972,
+    "positive_rate": 0.2685
+  }
+}

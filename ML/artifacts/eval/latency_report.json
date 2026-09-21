@@ -1,0 +1,10 @@
+{
+  "n_requests": 100,
+  "errors": 0,
+  "avg_latency_ms": 9.94,
+  "p50_latency_ms": 9.9,
+  "p95_latency_ms": 10.86,
+  "max_latency_ms": 15.24,
+  "total_elapsed_s": 1.006,
+  "throughput_req_per_sec": 99.41
+}

@@ -1,0 +1,111 @@
+# Central configuration for the churn prediction pipeline.
+# Every script (ingestion, training, serving, monitoring) reads from this
+# single file so paths/thresholds never drift out of sync between stages.
+
+paths:
+  raw_dir: data/raw
+  incoming_dir: data/incoming
+  processed_data: data/processed/training_data.csv
+  ingestion_log: data/ingestion_log.jsonl
+  models_dir: models
+  registry: models/registry.json
+  eval_dir: artifacts/eval
+  monitoring_dir: monitoring
+
+target:
+  column: Churn
+  positive_label: "Yes"
+
+id_column: customerID
+
+# Raw columns expected in every ingested file. Ingestion rejects files
+# missing any of these (schema/quality gate at the ingestion boundary).
+required_columns:
+  - customerID
+  - gender
+  - SeniorCitizen
+  - Partner
+  - Dependents
+  - tenure
+  - PhoneService
+  - MultipleLines
+  - InternetService
+  - OnlineSecurity
+  - OnlineBackup
+  - DeviceProtection
+  - TechSupport
+  - StreamingTV
+  - StreamingMovies
+  - Contract
+  - PaperlessBilling
+  - PaymentMethod
+  - MonthlyCharges
+  - TotalCharges
+  - Churn
+
+features:
+  # Numeric (scaled) inputs to the model, including engineered 0/1 flags -
+  # cheaper than one-hot encoding a binary column.
+  numeric:
+    - tenure
+    - MonthlyCharges
+    - TotalCharges
+    - SeniorCitizen
+    - num_services
+    - avg_monthly_spend_ratio
+    - contract_risk_score
+    - is_high_value_customer
+    - has_internet_no_security
+  # True string categories, one-hot encoded.
+  categorical:
+    - gender
+    - Partner
+    - Dependents
+    - InternetService
+    - Contract
+    - PaymentMethod
+    - PaperlessBilling
+    - tenure_bucket
+  # threshold used by the is_high_value_customer feature (percentile of
+  # MonthlyCharges in the training data at fit time; persisted with the
+  # model so serving reuses the exact training-time cutoff)
+  high_value_percentile: 0.75
+
+split:
+  test_size: 0.15
+  val_size: 0.15
+  random_state: 42
+
+training:
+  baseline_model: logistic_regression
+  candidate_model: random_forest
+  random_state: 42
+  random_forest:
+    n_estimators: 300
+    max_depth: 8
+    min_samples_leaf: 5
+
+promotion:
+  # Candidate is promoted to production only if it clears an absolute bar
+  # AND does not regress vs. the baseline by more than the allowed margin.
+  min_auc: 0.75
+  max_auc_regression_vs_baseline: 0.01
+
+monitoring:
+  # numeric drift: one-sample z-test of the recent batch mean against the
+  # training reference mean/std, using the reference std and the recent
+  # batch's own sample size as the standard error. This is what keeps the
+  # check from crying wolf on small batches: fixed a mean shift, the z-score
+  # shrinks as sample size shrinks (larger standard error), unlike a plain
+  # percent-of-mean threshold which is blind to sample size.
+  numeric_drift_zscore_threshold: 3.0
+  # categorical drift: absolute change in a category's share beyond this triggers a warning
+  categorical_drift_abs_threshold: 0.10
+  max_null_rate: 0.01
+  tenure_valid_range: [0, 100]
+  monthly_charges_valid_range: [0, 500]
+
+retraining_triggers:
+  min_new_days_of_data: 3
+  auc_drop_threshold: 0.03
+  drift_score_threshold: 2

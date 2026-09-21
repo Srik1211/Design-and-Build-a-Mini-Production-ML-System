@@ -1,0 +1,81 @@
+{
+  "computed_at": "2026-08-07T08:19:17.860631+00:00",
+  "n_rows": 4536,
+  "numeric": {
+    "tenure": {
+      "mean": 32.31768077601411,
+      "std": 24.556409519959672
+    },
+    "MonthlyCharges": {
+      "mean": 64.42223324514991,
+      "std": 30.040876434484613
+    },
+    "TotalCharges": {
+      "mean": 2263.4006834215165,
+      "std": 2255.90448712053
+    },
+    "SeniorCitizen": {
+      "mean": 0.1697530864197531,
+      "std": 0.37545712629269146
+    },
+    "num_services": {
+      "mean": 3.7017195767195767,
+      "std": 2.0885273102728354
+    },
+    "avg_monthly_spend_ratio": {
+      "mean": 0.8978492957442747,
+      "std": 0.15482018125803632
+    },
+    "contract_risk_score": {
+      "mean": 3.1261022927689592,
+      "std": 2.022468580607578
+    },
+    "is_high_value_customer": {
+      "mean": 0.25066137566137564,
+      "std": 0.4334416550462198
+    },
+    "has_internet_no_security": {
+      "mean": 0.3628747795414462,
+      "std": 0.4808821627359958
+    }
+  },
+  "categorical": {
+    "gender": {
+      "Male": 0.5095,
+      "Female": 0.4905
+    },
+    "Partner": {
+      "No": 0.5174,
+      "Yes": 0.4826
+    },
+    "Dependents": {
+      "No": 0.703,
+      "Yes": 0.297
+    },
+    "InternetService": {
+      "Fiber optic": 0.4378,
+      "DSL": 0.3452,
+      "No": 0.2169
+    },
+    "Contract": {
+      "Month-to-month": 0.5527,
+      "Two year": 0.2383,
+      "One year": 0.209
+    },
+    "PaymentMethod": {
+      "Electronic check": 0.3318,
+      "Bank transfer (automatic)": 0.2246,
+      "Mailed check": 0.2227,
+      "Credit card (automatic)": 0.2209
+    },
+    "PaperlessBilling": {
+      "Yes": 0.5955,
+      "No": 0.4045
+    },
+    "tenure_bucket": {
+      "loyal": 0.4248,
+      "new": 0.3108,
+      "established": 0.2643
+    }
+  }
+}

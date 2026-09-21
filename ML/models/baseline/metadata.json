@@ -1,0 +1,38 @@
+{
+  "name": "baseline",
+  "version": "baseline-20260807T081918",
+  "trained_at": "2026-08-07T08:19:18.719400+00:00",
+  "n_train_rows": 4536,
+  "feature_columns": {
+    "numeric": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges",
+      "SeniorCitizen",
+      "num_services",
+      "avg_monthly_spend_ratio",
+      "contract_risk_score",
+      "is_high_value_customer",
+      "has_internet_no_security"
+    ],
+    "categorical": [
+      "gender",
+      "Partner",
+      "Dependents",
+      "InternetService",
+      "Contract",
+      "PaymentMethod",
+      "PaperlessBilling",
+      "tenure_bucket"
+    ]
+  },
+  "metrics_val": {
+    "accuracy": 0.7778,
+    "roc_auc": 0.8387,
+    "precision": 0.6037,
+    "recall": 0.5019,
+    "f1": 0.5481,
+    "n_samples": 972,
+    "positive_rate": 0.2685
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "candidate",
+  "version": "candidate-20260807T081918",
+  "trained_at": "2026-08-07T08:19:18.759464+00:00",
+  "n_train_rows": 4536,
+  "feature_columns": {
+    "numeric": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges",
+      "SeniorCitizen",
+      "num_services",
+      "avg_monthly_spend_ratio",
+      "contract_risk_score",
+      "is_high_value_customer",
+      "has_internet_no_security"
+    ],
+    "categorical": [
+      "gender",
+      "Partner",
+      "Dependents",
+      "InternetService",
+      "Contract",
+      "PaymentMethod",
+      "PaperlessBilling",
+      "tenure_bucket"
+    ]
+  },
+  "metrics_val": {
+    "accuracy": 0.7829,
+    "roc_auc": 0.8355,
+    "precision": 0.6136,
+    "recall": 0.5172,
+    "f1": 0.5613,
+    "n_samples": 972,
+    "positive_rate": 0.2685
+  }
+}

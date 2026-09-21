@@ -1,0 +1,6 @@
+{"timestamp": "2026-08-07T08:18:07.862859+00:00", "source_file": "data/raw/historical_seed.csv", "rows_ingested": 5634, "cumulative_rows": 5634, "status": "seeded"}
+{"timestamp": "2026-08-07T08:18:07.868485+00:00", "source_file": "data/incoming/day_01_2026-08-01.csv", "rows_ingested": 282, "cumulative_rows": 5916, "status": "ingested"}
+{"timestamp": "2026-08-07T08:18:07.871702+00:00", "source_file": "data/incoming/day_02_2026-08-02.csv", "rows_ingested": 282, "cumulative_rows": 6198, "status": "ingested"}
+{"timestamp": "2026-08-07T08:18:07.874684+00:00", "source_file": "data/incoming/day_03_2026-08-03.csv", "rows_ingested": 282, "cumulative_rows": 6480, "status": "ingested"}
+{"timestamp": "2026-08-07T08:19:50.634774+00:00", "source_file": "data/incoming/day_04_2026-08-04.csv", "rows_ingested": 282, "cumulative_rows": 6762, "status": "ingested"}
+{"timestamp": "2026-08-07T08:19:50.638730+00:00", "source_file": "data/incoming/day_05_2026-08-05.csv", "rows_ingested": 281, "cumulative_rows": 7043, "status": "ingested"}
